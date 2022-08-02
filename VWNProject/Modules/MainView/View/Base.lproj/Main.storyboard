@@ -48,7 +48,7 @@
                                                     </label>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="-2" translatesAutoresizingMaskIntoConstraints="NO" id="1u2-s6-fw2">
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="-5" translatesAutoresizingMaskIntoConstraints="NO" id="1u2-s6-fw2">
                                                 <rect key="frame" x="18" y="823.66666666666663" width="355" height="81"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EUM-M7-lxn">
@@ -64,14 +64,14 @@
                                                         </state>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SD7-G5-oiR">
-                                                        <rect key="frame" x="195" y="0.0" width="160" height="81"/>
-                                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                                        <rect key="frame" x="192" y="0.0" width="163" height="81"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                                         <state key="normal" title="Log In">
                                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
                                                     </button>
                                                 </subviews>
+                                                <color key="backgroundColor" systemColor="systemGray5Color"/>
                                             </stackView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -115,6 +115,7 @@
                     <navigationItem key="navigationItem" id="Mvz-4G-v6f"/>
                     <size key="freeformSize" width="390" height="1200"/>
                     <connections>
+                        <outlet property="buttonsContainer" destination="1u2-s6-fw2" id="R99-N1-QkC"/>
                         <outlet property="logInBtn" destination="SD7-G5-oiR" id="nbw-lS-dRj"/>
                         <outlet property="signUpBtn" destination="EUM-M7-lxn" id="Mwy-LG-3cL"/>
                     </connections>

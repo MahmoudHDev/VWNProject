@@ -11,6 +11,7 @@ class MainViewController: UIViewController {
     //MARK:- Outlets
     @IBOutlet weak var signUpBtn    : UIButton!
     @IBOutlet weak var logInBtn     : UIButton!
+    @IBOutlet weak var buttonsContainer: UIStackView!
     
     //MARK:- View Life Cycle
 
@@ -20,12 +21,14 @@ class MainViewController: UIViewController {
         
     }
 
+    //MARK:- Methods
+    func buttonStyle(){
+        signUpBtn.layer.cornerRadius = 20
+        buttonsContainer.layer.cornerRadius = 20
+    }
+    
     //MARK:- Actions
 
-    func buttonStyle(){
-        signUpBtn.layer.cornerRadius = 25
-        logInBtn.layer.cornerRadius = 25
-    }
 
 }
 
