@@ -68,7 +68,6 @@
 			children = (
 				1E0BAC87289991D000DC9E5E /* Resources */,
 				1E0BAC7F28998FC300DC9E5E /* Modules */,
-				1EF7747A2899A69500D4D942 /* LoginView */,
 				1E0BAC7228998D5C00DC9E5E /* LaunchScreen.storyboard */,
 				1E0BAC7528998D5C00DC9E5E /* Info.plist */,
 			);
@@ -79,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				1E0BAC8028998FD000DC9E5E /* MainView */,
+				1EF7747A2899A69500D4D942 /* LoginView */,
 			);
 			path = Modules;
 			sourceTree = "<group>";

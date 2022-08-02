@@ -30,10 +30,12 @@ class LoginViewController: UIViewController {
     
     //MARK:- Methods
     func userInterfaceStyle() {
+        username.layer.masksToBounds    = true
+        password.layer.masksToBounds    = true
+        
         username.layer.cornerRadius     = 25
         password.layer.cornerRadius     = 25
         signInBtn.layer.cornerRadius    = 25
-        
     }
     
 }
