@@ -118,17 +118,17 @@
                                                                                                     <action selector="loginBtns:" destination="j9M-5M-iaE" eventType="touchUpInside" id="lwR-aO-f2Q"/>
                                                                                                 </connections>
                                                                                             </button>
-                                                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="-80" translatesAutoresizingMaskIntoConstraints="NO" id="7UJ-vm-4jO" userLabel="RegisterButton">
+                                                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="-50" translatesAutoresizingMaskIntoConstraints="NO" id="7UJ-vm-4jO" userLabel="RegisterButton">
                                                                                                 <rect key="frame" x="0.0" y="141.00000000000006" width="355" height="36"/>
                                                                                                 <subviews>
                                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not a member? " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RTa-cs-xfJ">
-                                                                                                        <rect key="frame" x="0.0" y="6.3333333333332558" width="217.66666666666666" height="23.333333333333329"/>
+                                                                                                        <rect key="frame" x="0.0" y="6.3333333333332558" width="202.66666666666666" height="23.333333333333329"/>
                                                                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                                                                                         <nil key="textColor"/>
                                                                                                         <nil key="highlightedColor"/>
                                                                                                     </label>
                                                                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z9c-U1-Jdu">
-                                                                                                        <rect key="frame" x="137.66666666666663" y="0.0" width="217.33333333333337" height="36"/>
+                                                                                                        <rect key="frame" x="152.66666666666663" y="0.0" width="202.33333333333337" height="36"/>
                                                                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                                                                                         <state key="normal" title="Register now">
                                                                                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>

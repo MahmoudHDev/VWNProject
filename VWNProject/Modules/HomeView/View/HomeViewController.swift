@@ -14,6 +14,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var listsCollectionView      : UICollectionView!
     @IBOutlet weak var productsCollectionView   : UICollectionView!
     
+    
     //MARK:- Properties
     var arrCategories   = ["Breakfast", "Dinner", "Desserts"]
     var arrLists        = ["All", "Plates", "Hot Drinks", "Iced Coffee"]

@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension HomeViewController: UICollectionViewDelegate,UICollectionViewDataSource {
+extension HomeViewController: UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     //MARK:- Collection View Configuration
     func collectionViewConfig() {
@@ -78,12 +78,18 @@ extension HomeViewController: UICollectionViewDelegate,UICollectionViewDataSourc
     //MARK:- CollectionView Delegate
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("Item Selected")
         // Did select
         // While ==> check for condition whether the item is selected or not
         
     }
 
-    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if collectionView == productsCollectionView {
+            let width = self.productsCollectionView.bounds.width / 2 - 46
+            return CGSize(width: width, height: 245)
+
+        }
+        return CGSize()
+    }
     
 }
