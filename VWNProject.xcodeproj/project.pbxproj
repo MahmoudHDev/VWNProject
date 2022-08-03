@@ -14,6 +14,8 @@
 		1E0BAC7128998D5C00DC9E5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E0BAC7028998D5C00DC9E5E /* Assets.xcassets */; };
 		1E0BAC7428998D5C00DC9E5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E0BAC7228998D5C00DC9E5E /* LaunchScreen.storyboard */; };
 		1E0BAC7D28998ED400DC9E5E /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E0BAC7C28998ED400DC9E5E /* Colors.xcassets */; };
+		1EC95965289A6CBC003C3909 /* TextFieldPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC95964289A6CBC003C3909 /* TextFieldPadding.swift */; };
+		1EC95968289A7F3E003C3909 /* ShadowExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC95967289A7F3D003C3909 /* ShadowExtension.swift */; };
 		1EF774782899A58000D4D942 /* MainViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF774772899A58000D4D942 /* MainViewPresenter.swift */; };
 		1EF7747F2899A6E900D4D942 /* LoginView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EF7747E2899A6E900D4D942 /* LoginView.storyboard */; };
 		1EF774822899A70D00D4D942 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF774812899A70D00D4D942 /* LoginViewController.swift */; };
@@ -40,6 +42,8 @@
 		1E0BAC7328998D5C00DC9E5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1E0BAC7528998D5C00DC9E5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1E0BAC7C28998ED400DC9E5E /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		1EC95964289A6CBC003C3909 /* TextFieldPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldPadding.swift; sourceTree = "<group>"; };
+		1EC95967289A7F3D003C3909 /* ShadowExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowExtension.swift; sourceTree = "<group>"; };
 		1EF774772899A58000D4D942 /* MainViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewPresenter.swift; sourceTree = "<group>"; };
 		1EF7747E2899A6E900D4D942 /* LoginView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginView.storyboard; sourceTree = "<group>"; };
 		1EF774812899A70D00D4D942 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -145,6 +149,8 @@
 				1E0BAC6928998D5800DC9E5E /* SceneDelegate.swift */,
 				1E0BAC7028998D5C00DC9E5E /* Assets.xcassets */,
 				1E0BAC7C28998ED400DC9E5E /* Colors.xcassets */,
+				1EC95967289A7F3D003C3909 /* ShadowExtension.swift */,
+				1EC95964289A6CBC003C3909 /* TextFieldPadding.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -323,9 +329,11 @@
 				1E0BAC6828998D5800DC9E5E /* AppDelegate.swift in Sources */,
 				1EF774782899A58000D4D942 /* MainViewPresenter.swift in Sources */,
 				1EF774852899B1FF00D4D942 /* LoginViewPresenter.swift in Sources */,
+				1EC95968289A7F3E003C3909 /* ShadowExtension.swift in Sources */,
 				1EF774A42899D5EF00D4D942 /* ItemsCollectionViewCell.swift in Sources */,
 				1EF774822899A70D00D4D942 /* LoginViewController.swift in Sources */,
 				1EF7748F2899C4BC00D4D942 /* HomeViewController.swift in Sources */,
+				1EC95965289A6CBC003C3909 /* TextFieldPadding.swift in Sources */,
 				1E0BAC6A28998D5800DC9E5E /* SceneDelegate.swift in Sources */,
 				1EF774942899D36100D4D942 /* Home+CollectionView.swift in Sources */,
 			);

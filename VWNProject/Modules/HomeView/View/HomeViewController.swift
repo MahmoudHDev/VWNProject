@@ -23,10 +23,13 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionViewConfig()
-        
+        textFieldStyle()
     }
     
     //MARK:- Methods
     
-
+    func textFieldStyle() {
+        searchTextField.attributedPlaceholder = NSAttributedString(string: "Search",
+                                                                   attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
+    }
 }

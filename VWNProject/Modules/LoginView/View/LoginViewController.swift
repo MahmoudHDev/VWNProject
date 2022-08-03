@@ -27,6 +27,12 @@ class LoginViewController: UIViewController {
     
     //MARK:- Actions
 
+    @IBAction func loginBtns(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+        let storyBoard = UIStoryboard(name: "HomeView", bundle: nil).instantiateViewController(identifier: "HomeView")
+        self.present(storyBoard, animated: true, completion: nil)
+    }
+    
     
     //MARK:- Methods
     func userInterfaceStyle() {
@@ -36,11 +42,16 @@ class LoginViewController: UIViewController {
         username.layer.cornerRadius     = 25
         password.layer.cornerRadius     = 25
         signInBtn.layer.cornerRadius    = 25
+        
+        username.setLeftPaddingPoints(36)
+        password.setLeftPaddingPoints(36)
+        
     }
     
 }
 
 //MARK:- Presenter
 extension LoginViewController: LoginViewPr {
-    
+    // Presenter Methods
 }
+
