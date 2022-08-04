@@ -9,7 +9,7 @@ import UIKit
 
 class CategoriesCollectionViewCell: UICollectionViewCell {
     //MARK:- Outlets
-    @IBOutlet weak private var title: UILabel!
+    @IBOutlet weak private var titleLabel: UILabel!
     @IBOutlet weak var containerV   : UIView!
     
     //MARK:- nib Init
@@ -24,8 +24,12 @@ class CategoriesCollectionViewCell: UICollectionViewCell {
         contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 0 , left: 0, bottom: 0 , right: 17))
     }
     //MARK:- Methods
-    func setCell(title: String) {
-        self.title.text = title
+    func setCell(title: String, isSelected: Bool) {
+        self.titleLabel.text = title
+        if isSelected {
+            self.containerV.backgroundColor = UIColor(named: "Marron")
+            self.titleLabel.textColor = .white
+        }
     }
 
 }

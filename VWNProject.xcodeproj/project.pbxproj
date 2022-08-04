@@ -14,6 +14,9 @@
 		1E0BAC7128998D5C00DC9E5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E0BAC7028998D5C00DC9E5E /* Assets.xcassets */; };
 		1E0BAC7428998D5C00DC9E5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E0BAC7228998D5C00DC9E5E /* LaunchScreen.storyboard */; };
 		1E0BAC7D28998ED400DC9E5E /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E0BAC7C28998ED400DC9E5E /* Colors.xcassets */; };
+		1E3C7413289B334B0020F98D /* AddProduct+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3C7412289B334B0020F98D /* AddProduct+CoreData.swift */; };
+		1E3C7417289B343F0020F98D /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3C7416289B343F0020F98D /* ProductModel.swift */; };
+		1E3C741B289B352C0020F98D /* Product.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1E3C7419289B352C0020F98D /* Product.xcdatamodeld */; };
 		1E50070B289AB44A00BB4E64 /* AddProduct+imagesCollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E50070A289AB44A00BB4E64 /* AddProduct+imagesCollView.swift */; };
 		1E500710289AB52600BB4E64 /* ImagesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E50070E289AB52600BB4E64 /* ImagesCollectionViewCell.swift */; };
 		1E500711289AB52600BB4E64 /* ImagesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E50070F289AB52600BB4E64 /* ImagesCollectionViewCell.xib */; };
@@ -50,6 +53,9 @@
 		1E0BAC7328998D5C00DC9E5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1E0BAC7528998D5C00DC9E5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1E0BAC7C28998ED400DC9E5E /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		1E3C7412289B334B0020F98D /* AddProduct+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddProduct+CoreData.swift"; sourceTree = "<group>"; };
+		1E3C7416289B343F0020F98D /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
+		1E3C741A289B352C0020F98D /* Product.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Product.xcdatamodel; sourceTree = "<group>"; };
 		1E50070A289AB44A00BB4E64 /* AddProduct+imagesCollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddProduct+imagesCollView.swift"; sourceTree = "<group>"; };
 		1E50070E289AB52600BB4E64 /* ImagesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesCollectionViewCell.swift; sourceTree = "<group>"; };
 		1E50070F289AB52600BB4E64 /* ImagesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImagesCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -172,6 +178,16 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		1E3C7411289B333E0020F98D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1E3C7412289B334B0020F98D /* AddProduct+CoreData.swift */,
+				1E3C7416289B343F0020F98D /* ProductModel.swift */,
+				1E3C7419289B352C0020F98D /* Product.xcdatamodeld */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		1E500708289AB3F500BB4E64 /* CollectionView */ = {
 			isa = PBXGroup;
 			children = (
@@ -195,18 +211,10 @@
 		1EC9596A289A9A42003C3909 /* AddProduct */ = {
 			isa = PBXGroup;
 			children = (
-				1EC9596D289A9A73003C3909 /* Model */,
+				1E3C7411289B333E0020F98D /* Model */,
 				1EC9596C289A9A6C003C3909 /* View */,
-				1EC9596B289A9A67003C3909 /* Presenter */,
 			);
 			path = AddProduct;
-			sourceTree = "<group>";
-		};
-		1EC9596B289A9A67003C3909 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Presenter;
 			sourceTree = "<group>";
 		};
 		1EC9596C289A9A6C003C3909 /* View */ = {
@@ -217,13 +225,6 @@
 				1EC95971289A9ABE003C3909 /* AddProductViewController.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		1EC9596D289A9A73003C3909 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		1EF7747A2899A69500D4D942 /* LoginView */ = {
@@ -400,6 +401,7 @@
 				1E500715289AB5C400BB4E64 /* AddImgCollectionViewCell.swift in Sources */,
 				1EF7749F2899D58A00D4D942 /* ListsCollectionViewCell.swift in Sources */,
 				1EF7749A2899D48000D4D942 /* CategoriesCollectionViewCell.swift in Sources */,
+				1E3C741B289B352C0020F98D /* Product.xcdatamodeld in Sources */,
 				1E500710289AB52600BB4E64 /* ImagesCollectionViewCell.swift in Sources */,
 				1EC95972289A9ABE003C3909 /* AddProductViewController.swift in Sources */,
 				1E500719289ACE5300BB4E64 /* Users.swift in Sources */,
@@ -409,12 +411,14 @@
 				1EF774782899A58000D4D942 /* MainViewPresenter.swift in Sources */,
 				1EF774852899B1FF00D4D942 /* LoginViewPresenter.swift in Sources */,
 				1EC95968289A7F3E003C3909 /* ShadowExtension.swift in Sources */,
+				1E3C7413289B334B0020F98D /* AddProduct+CoreData.swift in Sources */,
 				1EF774A42899D5EF00D4D942 /* ItemsCollectionViewCell.swift in Sources */,
 				1E50070B289AB44A00BB4E64 /* AddProduct+imagesCollView.swift in Sources */,
 				1EF774822899A70D00D4D942 /* LoginViewController.swift in Sources */,
 				1EF7748F2899C4BC00D4D942 /* HomeViewController.swift in Sources */,
 				1EC95965289A6CBC003C3909 /* TextFieldPadding.swift in Sources */,
 				1E0BAC6A28998D5800DC9E5E /* SceneDelegate.swift in Sources */,
+				1E3C7417289B343F0020F98D /* ProductModel.swift in Sources */,
 				1EF774942899D36100D4D942 /* Home+CollectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -621,6 +625,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1E3C7419289B352C0020F98D /* Product.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1E3C741A289B352C0020F98D /* Product.xcdatamodel */,
+			);
+			currentVersion = 1E3C741A289B352C0020F98D /* Product.xcdatamodel */;
+			path = Product.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 1E0BAC5C28998D5800DC9E5E /* Project object */;
 }

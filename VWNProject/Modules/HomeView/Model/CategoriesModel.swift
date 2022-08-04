@@ -9,6 +9,6 @@ import Foundation
 
 struct CatgoriesModel {
     
-    let isSelected = false
-    let catgories: [String]
+    var isSelected: Bool?
+    var title: String?
 }

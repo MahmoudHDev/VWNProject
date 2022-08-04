@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class AddProductViewController: UIViewController {
 
@@ -16,6 +17,7 @@ class AddProductViewController: UIViewController {
     @IBOutlet weak var meals                : UITextField!
     @IBOutlet weak var itemType             : UITextField!
     @IBOutlet weak var price                : UITextField!
+    @IBOutlet weak var doneBtn              : UIButton!
     // Views
     @IBOutlet weak var productNameView      : UIView!
     @IBOutlet weak var productInfoView      : UIView!
@@ -33,19 +35,24 @@ class AddProductViewController: UIViewController {
     @IBOutlet weak var priceUpBtn           : UIButton!
     @IBOutlet weak var priceDownBtn         : UIButton!
     
+    
+    
     //MARK:- Properties
     var picker = UIImagePickerController()
     private var mealQuantity     = 0
     private var itemTypeQuantity = 0
     private var priceQ           = 0
             var arrImages        = [UIImage]()
+            var products : [NSManagedObject] = []
+
     //MARK:- View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        textFieldStyle()
-        userInterfaceStyle()
-        picker.allowsEditing = true
-        picker.delegate = self
+        self.textFieldStyle()
+        self.userInterfaceStyle()
+        self.collectionViewConfig()
+        self.picker.allowsEditing = true
+        self.picker.delegate = self
 
     }
     
@@ -72,13 +79,24 @@ class AddProductViewController: UIViewController {
         price       .setLeftPaddingPoints(22)
     }
     
-    func userInterfaceStyle(){
-
-        productNameView.layer.cornerRadius = 8
-        productInfoView.layer.cornerRadius = 8
-        MealView       .layer.cornerRadius = 8
-        itemTypeView   .layer.cornerRadius = 8
-        priceView      .layer.cornerRadius = 8
+    func upAndDownBttnsStyle() {
+        
+        mealUpBtn.layer.cornerRadius        = 0.5 * mealUpBtn.bounds.size.width
+        mealDownBtn.layer.cornerRadius      = 0.5 * mealDownBtn.bounds.size.width
+        ItemTypeUpBtn.layer.cornerRadius    = 0.5 * ItemTypeUpBtn.bounds.size.width
+        ItemTypeDownBtn.layer.cornerRadius  = 0.5 * ItemTypeDownBtn.bounds.size.width
+        priceUpBtn.layer.cornerRadius       = 0.5 * priceUpBtn.bounds.size.width
+        priceDownBtn.layer.cornerRadius     = 0.5 * priceDownBtn.bounds.size.width
+        
+    }
+    
+    func userInterfaceStyle() {
+        doneBtn.layer.cornerRadius          = 8
+        productNameView.layer.cornerRadius  = 8
+        productInfoView.layer.cornerRadius  = 8
+        MealView.layer.cornerRadius         = 8
+        itemTypeView.layer.cornerRadius     = 8
+        priceView.layer.cornerRadius        = 8
         
     }
     //MARK:- Actions
@@ -98,7 +116,7 @@ class AddProductViewController: UIViewController {
         case 3:
             priceQ     += 1
             price.text = String(priceQ)
-            print("Price - 1")
+            print("Price + 1")
         default:
             break
         }
@@ -125,6 +143,27 @@ class AddProductViewController: UIViewController {
         }
     }
     
+    
+    @IBAction func cancelButton(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+
+    @IBAction func doneButton(_ sender: UIButton) {
+        // Add to coreData
+        guard let name  =  productName.text,
+              let info  = productInfo.text,
+              let meal  = meals,
+              let type  = itemType.text,
+              let price = price else {return}
+        
+        
+        let productModel = ProductModel(productName: name,
+                                        productInfo: info,
+                                        itemType: type,
+                                        meals: Int(meal.text!)  ?? 0,
+                                        price: Int(price.text!) ?? 0)
+        self.saveData(productModel: productModel)   // Save to CoreData
+    }
     
     
 }

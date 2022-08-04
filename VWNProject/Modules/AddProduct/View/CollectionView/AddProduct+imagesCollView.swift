@@ -10,7 +10,7 @@ import UIKit
 extension AddProductViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     
     //MARK:- CollectionView Configuration
-
+    
     func collectionViewConfig() {
         
         // Delegate and DataSource
@@ -18,15 +18,16 @@ extension AddProductViewController: UICollectionViewDelegate, UICollectionViewDa
         imagesCollectionView.dataSource = self
         
         // Register NIBS
-        imagesCollectionView.register(UINib(nibName: "ImagesCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "addCell")
-        imagesCollectionView.register(UINib(nibName: "AddImgCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "imagesCell")
+        
+        imagesCollectionView.register(UINib(nibName: "AddImgCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "addCell")
+        imagesCollectionView.register(UINib(nibName: "ImagesCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "imagesCell")
         
         // Style
         imagesCollectionView.backgroundColor = .none
     }
     
     //MARK:- CollectionView DataSource
-
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if arrImages.count == 0 {
             return 1
@@ -37,24 +38,33 @@ extension AddProductViewController: UICollectionViewDelegate, UICollectionViewDa
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.row == self.arrImages.count - 1 {
-            let addCell = collectionView.dequeueReusableCell(withReuseIdentifier: "addCell", for: indexPath) as! ImagesCollectionViewCell
+            let cell: ImagesCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "imagesCell", for: indexPath) as! ImagesCollectionViewCell
+
+            if arrImages.count > 0 {
+                cell.Itemimage.image = arrImages[indexPath.row]
+                cell.deleteImg = { [weak self] in
+                    guard let self = self else {return}
+                    self.arrImages.remove(at: indexPath.row)
+                }
+            }
+            return cell
+            
+        }else {
+            let addCell: AddImgCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "addCell", for: indexPath) as! AddImgCollectionViewCell
             return addCell
         }
-        let cell: ImagesCollectionViewCell  = collectionView.dequeueReusableCell(withReuseIdentifier: "imagesCell", for: indexPath) as! ImagesCollectionViewCell
-        cell.deleteImg = { [weak self] in
-            guard let self = self else {return}
-            self.arrImages.remove(at: indexPath.row)
-        }
-        return cell
+
     }
     
     
     //MARK:- CollectionView Delegate
-
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.row == self.arrImages.count - 1 {
+            
+        }else{
             picker.sourceType = .photoLibrary
-            present(picker, animated: true, completion: nil)
+            self.present(picker, animated: true)
         }
     }
     
@@ -69,5 +79,6 @@ extension AddProductViewController: UIImagePickerControllerDelegate ,UINavigatio
         guard let selectedImage = info[.editedImage] as? UIImage else {return}
         self.arrImages.append(selectedImage)
         self.imagesCollectionView.reloadData()
+        self.dismiss(animated: true, completion: nil)
     }
 }

@@ -40,7 +40,7 @@ extension HomeViewController: UICollectionViewDelegate,UICollectionViewDataSourc
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         if collectionView == categoriesCollectionView {
-            return arrCategories.count
+            return categories.count
         }else if collectionView == listsCollectionView {
             return arrLists.count
         }else if collectionView == productsCollectionView{
@@ -55,9 +55,9 @@ extension HomeViewController: UICollectionViewDelegate,UICollectionViewDataSourc
         if collectionView == categoriesCollectionView {
             
             let firstCell = categoriesCollectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CategoriesCollectionViewCell
-            let categories = arrCategories[indexPath.row]
-            
-            firstCell.setCell(title: categories)
+            let title = categories[indexPath.row].title ?? ""
+            let isSelected = categories[indexPath.row].isSelected ?? false
+            firstCell.setCell(title: title, isSelected: isSelected )
             return firstCell
 
         }else if collectionView == listsCollectionView {
@@ -78,18 +78,30 @@ extension HomeViewController: UICollectionViewDelegate,UICollectionViewDataSourc
     //MARK:- CollectionView Delegate
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // Did select
-        // While ==> check for condition whether the item is selected or not
+        if collectionView == self.categoriesCollectionView {
+            var i = 0
+            while i < self.categories.count {
+                self.categories[i].isSelected = false
+                i += 1
+            }
+            self.categories[indexPath.row].isSelected = true
+            self.categoriesCollectionView.reloadData()
+        }
         
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == productsCollectionView {
-            let width = self.productsCollectionView.bounds.width / 2 - 46
+            let width = self.productsCollectionView.bounds.width/2 - 10
             return CGSize(width: width, height: 245)
 
+        } else if  collectionView == categoriesCollectionView {
+            return CGSize(width:151 , height: 81)
+        }else{
+            let title = arrLists[indexPath.row]
+            let width = title.size(withAttributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 20) ]).width
+            return CGSize(width: width+25, height: 24)
         }
-        return CGSize()
     }
     
 }

@@ -9,7 +9,6 @@ import UIKit
 
 class ImagesCollectionViewCell: UICollectionViewCell {
     //MARK:- Properties
-    @IBOutlet weak var containerV   : UIView!
     @IBOutlet weak var Itemimage    : UIImageView!
     @IBOutlet weak var removeBtn    : UIButton!
     
@@ -17,6 +16,7 @@ class ImagesCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        Itemimage.layer.cornerRadius = 8
         // Initialization code
     }
     

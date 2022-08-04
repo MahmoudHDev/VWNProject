@@ -16,21 +16,36 @@ class HomeViewController: UIViewController {
     
     
     //MARK:- Properties
-    var arrCategories   = ["Breakfast", "Dinner", "Desserts"]
-    var arrLists        = ["All", "Plates", "Hot Drinks", "Iced Coffee"]
+    var categories = [CatgoriesModel]()
+    var arrLists = ["All", "Plates", "Hot Drinks", "Iced Coffee"]
     
     //MARK:- View Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionViewConfig()
-        textFieldStyle()
+        self.collectionViewConfig()
+        self.textFieldStyle()
+        self.setCategoriesModel()
     }
     
     //MARK:- Methods
+    func setCategoriesModel() {
+        self.categories = [
+            CatgoriesModel(isSelected: true, title: "Breakfast"),
+            CatgoriesModel(isSelected: false, title: "Dinner"),
+            CatgoriesModel(isSelected: false, title: "Desserts"),
+        ]
+    }
     
     func textFieldStyle() {
         searchTextField.attributedPlaceholder = NSAttributedString(string: "Search",
                                                                    attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
     }
+    
+    //MARK:- Actions
+    @IBAction func addProductBttn() {
+        let storyBoard = UIStoryboard(name: "AddProduct", bundle: nil).instantiateViewController(identifier: "addProduct")
+        self.present(storyBoard, animated: true, completion: nil)
+    }
+
 }

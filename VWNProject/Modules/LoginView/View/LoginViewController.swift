@@ -9,8 +9,8 @@ import UIKit
 
 class LoginViewController: UIViewController {
     //MARK:- Outlets
-    @IBOutlet weak var username     : UITextField!
-    @IBOutlet weak var password     : UITextField!
+    @IBOutlet weak var usernameTextField     : UITextField!
+    @IBOutlet weak var passwordTextField     : UITextField!
     @IBOutlet weak var signInBtn    : UIButton!
     
     //MARK:- Properties
@@ -21,12 +21,14 @@ class LoginViewController: UIViewController {
               let delegate = windowScene.delegate as? SceneDelegate else { return nil }
         return delegate
     }
+    
     //MARK:- View
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter = LoginViewPresenter(view: self)
-        
-        userInterfaceStyle()
+        self.usernameTextField.text = "admin@admin.com"
+        self.passwordTextField.text = "password"
+        self.userInterfaceStyle()
         
     }
     
@@ -37,8 +39,8 @@ class LoginViewController: UIViewController {
         
         
         // Login to database...
-        let email = self.username.text ?? ""
-        let password = self.password.text ?? ""
+        let email = self.usernameTextField.text ?? ""
+        let password = self.passwordTextField.text ?? ""
         if let user = dummyDatabase.first(where: { user in
             user.email == email && user.password == password
         }) {
@@ -61,15 +63,15 @@ class LoginViewController: UIViewController {
     
     //MARK:- Methods
     func userInterfaceStyle() {
-        username.layer.masksToBounds    = true
-        password.layer.masksToBounds    = true
+        usernameTextField.layer.masksToBounds    = true
+        passwordTextField.layer.masksToBounds    = true
         
-        username.layer.cornerRadius     = 8
-        password.layer.cornerRadius     = 8
+        usernameTextField.layer.cornerRadius     = 8
+        passwordTextField.layer.cornerRadius     = 8
         signInBtn.layer.cornerRadius    = 8
         
-        username.setLeftPaddingPoints(36)
-        password.setLeftPaddingPoints(36)
+        usernameTextField.setLeftPaddingPoints(36)
+        passwordTextField.setLeftPaddingPoints(36)
         
     }
     
